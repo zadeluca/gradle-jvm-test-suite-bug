@@ -24,6 +24,8 @@ tasks {
 ./gradlew testIntegration
 ----
 
+== Using the `java-library` plugin
+
 .Error
 [source,text]
 ----
@@ -88,4 +90,22 @@ Caused by: java.lang.ClassNotFoundException: com.example.demo.SampleComponent
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
 	... 55 more
+----
+
+== Using the `java` plugin
+
+.Error
+[source,text]
+----
+> Task :compileTestIntegrationJava FAILED
+demo/src/testIntegration/java/com/example/demo/SampleComponentTest.java:18: error: cannot find symbol
+    private SampleComponent sampleComponent;
+            ^
+  symbol:   class SampleComponent
+  location: class SampleComponentTest
+demo/src/testIntegration/java/com/example/demo/SampleComponentTest.java:14: error: cannot find symbol
+@ContextConfiguration(classes = { SampleComponent.class })
+                                  ^
+  symbol: class SampleComponent
+2 errors
 ----
