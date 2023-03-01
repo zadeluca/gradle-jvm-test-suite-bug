@@ -36,6 +36,10 @@ testing {
             dependencies {
                 implementation(project())
             }
+            sources {
+                compileClasspath += sourceSets.main.get().output
+                runtimeClasspath += sourceSets.main.get().output
+            }
         }
     }
 }
