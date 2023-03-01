@@ -35,10 +35,7 @@ testing {
         val testIntegration by registering(JvmTestSuite::class) {
             dependencies {
                 implementation(project())
-            }
-            sources {
-                compileClasspath += sourceSets.main.get().output
-                runtimeClasspath += sourceSets.main.get().output
+                implementation(sourceSets.main.get().output)
             }
         }
     }
