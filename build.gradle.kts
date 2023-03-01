@@ -1,5 +1,4 @@
 plugins {
-    id("org.springframework.boot") version "2.6.3"
     `java-library`
     `jvm-test-suite`
 }
@@ -13,10 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.springframework.boot:spring-boot-dependencies:2.6.3"))
-    implementation("org.springframework.boot:spring-boot-starter")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
 }
 
 tasks {
@@ -38,8 +34,7 @@ testing {
         }
         val testIntegration by registering(JvmTestSuite::class) {
             dependencies {
-                implementation(project)
-                implementation("org.springframework.boot:spring-boot-starter-test:2.6.3")
+                implementation(project())
             }
         }
     }
